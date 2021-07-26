@@ -73,6 +73,7 @@ int main(void)
     {
         //UART_example_PRINTF();
         //test_Serial_Port();
+        printf("TEST");
         __delay_ms(500);        
     }
     return 1; 
