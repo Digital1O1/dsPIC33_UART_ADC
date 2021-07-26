@@ -56,6 +56,152 @@
 */
 /**
   @Summary
+    Sets the GPIO pin, RA0, high using LATA0.
+
+  @Description
+    Sets the GPIO pin, RA0, high using LATA0.
+
+  @Preconditions
+    The RA0 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RA0 high (1)
+    POT_Pin_SetHigh();
+    </code>
+
+*/
+#define POT_Pin_SetHigh()          (_LATA0 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RA0, low using LATA0.
+
+  @Description
+    Sets the GPIO pin, RA0, low using LATA0.
+
+  @Preconditions
+    The RA0 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RA0 low (0)
+    POT_Pin_SetLow();
+    </code>
+
+*/
+#define POT_Pin_SetLow()           (_LATA0 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RA0, using LATA0.
+
+  @Description
+    Toggles the GPIO pin, RA0, using LATA0.
+
+  @Preconditions
+    The RA0 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RA0
+    POT_Pin_Toggle();
+    </code>
+
+*/
+#define POT_Pin_Toggle()           (_LATA0 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RA0.
+
+  @Description
+    Reads the value of the GPIO pin, RA0.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RA0
+    postValue = POT_Pin_GetValue();
+    </code>
+
+*/
+#define POT_Pin_GetValue()         _RA0
+/**
+  @Summary
+    Configures the GPIO pin, RA0, as an input.
+
+  @Description
+    Configures the GPIO pin, RA0, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RA0 as an input
+    POT_Pin_SetDigitalInput();
+    </code>
+
+*/
+#define POT_Pin_SetDigitalInput()  (_TRISA0 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RA0, as an output.
+
+  @Description
+    Configures the GPIO pin, RA0, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RA0 as an output
+    POT_Pin_SetDigitalOutput();
+    </code>
+
+*/
+#define POT_Pin_SetDigitalOutput() (_TRISA0 = 0)
+/**
+  @Summary
     Sets the GPIO pin, RE0, high using LATE0.
 
   @Description

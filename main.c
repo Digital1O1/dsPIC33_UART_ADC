@@ -65,15 +65,27 @@ void test_Serial_Port()
  */
 int main(void)
 {
+    int conversion,i=0;
+    
     // initialize the device
     SYSTEM_Initialize();
-    //int count = 0;
     
     while (1)
     {
         //UART_example_PRINTF();
         //test_Serial_Port();
-        printf("TEST");
+        ADC1_Enable();    
+        ADC1_ChannelSelect(POT_Pin);
+        ADC1_SoftwareTriggerEnable();
+        //Provide Delay
+        for(i=0;i <1000;i++)
+        {
+            printf("%d\r\n",i);
+        }
+        ADC1_SoftwareTriggerDisable();
+        while(!ADC1_IsConversionComplete(POT));
+        conversion = ADC1_ConversionResultGet(POT);
+        ADC1_Disable(); 
         __delay_ms(500);        
     }
     return 1; 

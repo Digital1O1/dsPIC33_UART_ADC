@@ -202,10 +202,10 @@
 #include "clock.h"
 #include "system.h"
 #include "system_types.h"
-#include "uart2.h"
 #include "interrupt_manager.h"
 #include "traps.h"
 #include "adc1.h"
+#include "uart2.h"
 
 void SYSTEM_Initialize(void)
 {
