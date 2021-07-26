@@ -75,7 +75,7 @@ int main(void)
         //UART_example_PRINTF();
         //test_Serial_Port();
         ADC1_Enable();    
-        ADC1_ChannelSelect(POT_Pin);
+        ADC1_ChannelSelect(_LATA0);
         ADC1_SoftwareTriggerEnable();
         //Provide Delay
         for(i=0;i <1000;i++)
@@ -83,8 +83,9 @@ int main(void)
             printf("%d\r\n",i);
         }
         ADC1_SoftwareTriggerDisable();
-        while(!ADC1_IsConversionComplete(POT));
-        conversion = ADC1_ConversionResultGet(POT);
+        while(!ADC1_IsConversionComplete(_LATA0));
+        conversion = ADC1_ConversionResultGet(_LATA0);
+        
         ADC1_Disable(); 
         __delay_ms(500);        
     }

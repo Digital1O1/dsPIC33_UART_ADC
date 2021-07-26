@@ -53,6 +53,7 @@
 */
 
 static void (*ADC1_CommonDefaultInterruptHandler)(void);
+static void (*ADC1_POT_PinDefaultInterruptHandler)(uint16_t adcVal);
 static void (*ADC1_channel_AN16DefaultInterruptHandler)(uint16_t adcVal);
 static void (*ADC1_channel_AN17DefaultInterruptHandler)(uint16_t adcVal);
 static void (*ADC1_channel_AN18DefaultInterruptHandler)(uint16_t adcVal);
@@ -148,6 +149,7 @@ void ADC1_Initialize (void)
 	
     //Assign Default Callbacks
     ADC1_SetCommonInterruptHandler(&ADC1_CallBack);
+    ADC1_SetPOT_PinInterruptHandler(&ADC1_POT_Pin_CallBack);
     ADC1_Setchannel_AN16InterruptHandler(&ADC1_channel_AN16_CallBack);
     ADC1_Setchannel_AN17InterruptHandler(&ADC1_channel_AN17_CallBack);
     ADC1_Setchannel_AN18InterruptHandler(&ADC1_channel_AN18_CallBack);
@@ -182,8 +184,8 @@ void ADC1_Initialize (void)
     // Enabling Power for the Shared Core
     ADC1_SharedCorePowerEnable();
 
-    //TRGSRC0 None; TRGSRC1 None; 
-    ADTRIG0L = 0x00;
+    //TRGSRC0 Common Software Trigger; TRGSRC1 None; 
+    ADTRIG0L = 0x01;
     //TRGSRC3 None; TRGSRC2 None; 
     ADTRIG0H = 0x00;
     //TRGSRC4 None; TRGSRC5 None; 
@@ -235,6 +237,32 @@ void __attribute__ ((weak)) ADC1_Tasks ( void )
 
         // clear the ADC1 interrupt flag
         IFS5bits.ADCIF = 0;
+    }
+}
+
+void __attribute__ ((weak)) ADC1_POT_Pin_CallBack( uint16_t adcVal )
+{ 
+
+}
+
+void ADC1_SetPOT_PinInterruptHandler(void* handler)
+{
+    ADC1_POT_PinDefaultInterruptHandler = handler;
+}
+
+void __attribute__ ((weak)) ADC1_POT_Pin_Tasks ( void )
+{
+    uint16_t valPOT_Pin;
+
+    if(ADSTATLbits.AN0RDY)
+    {
+        //Read the ADC value from the ADCBUF
+        valPOT_Pin = ADCBUF0;
+
+        if(ADC1_POT_PinDefaultInterruptHandler) 
+        { 
+            ADC1_POT_PinDefaultInterruptHandler(valPOT_Pin); 
+        }
     }
 }
 

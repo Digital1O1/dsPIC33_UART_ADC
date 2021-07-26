@@ -90,6 +90,7 @@
  */
 typedef enum 
 {
+    POT_Pin,//Channel Name:AN0   Assigned to:Shared Channel
     channel_AN16,//Channel Name:AN16   Assigned to:Shared Channel
     channel_AN17,//Channel Name:AN17   Assigned to:Shared Channel
     channel_AN18,//Channel Name:AN18   Assigned to:Shared Channel
@@ -385,6 +386,9 @@ inline static uint16_t ADC1_ConversionResultGet( ADC1_CHANNEL channel )
 
     switch(channel)
     {
+        case POT_Pin:
+                result = ADCBUF0;
+                break;
         case channel_AN16:
                 result = ADCBUF16;
                 break;
@@ -449,6 +453,9 @@ inline static bool ADC1_IsConversionComplete(ADC1_CHANNEL channel)
 
     switch(channel)
     {
+        case POT_Pin:
+                status = ADSTATLbits.AN0RDY;
+                break;
         case channel_AN16:
                 status = ADSTATHbits.AN16RDY;
                 break;
@@ -674,6 +681,9 @@ inline static void ADC1_IndividualChannelInterruptEnable(ADC1_CHANNEL channel)
 {
     switch(channel)
     {
+        case POT_Pin:
+                IEC5bits.ADCAN0IE = 1;
+                break;
         case channel_AN16:
                 IEC6bits.ADCAN16IE = 1;
                 break;
@@ -720,6 +730,9 @@ inline static void ADC1_IndividualChannelInterruptDisable(ADC1_CHANNEL channel)
 {
     switch(channel)
     {
+        case POT_Pin:
+                IEC5bits.ADCAN0IE = 0;
+                break;
         case channel_AN16:
                 IEC6bits.ADCAN16IE = 0;
                 break;
@@ -765,6 +778,9 @@ inline static void ADC1_IndividualChannelInterruptFlagClear(ADC1_CHANNEL channel
 {
     switch(channel)
     {
+        case POT_Pin:
+                IFS5bits.ADCAN0IF = 0;
+                break;
         case channel_AN16:
                 IFS6bits.ADCAN16IF = 0;
                 break;
@@ -784,6 +800,76 @@ inline static void ADC1_IndividualChannelInterruptFlagClear(ADC1_CHANNEL channel
                 break;
     }
 }
+
+/**
+  @Summary
+    ADC1 POT_Pin callback routine.
+
+  @Description
+    This routine is a ADC1 POT_Pin callback function.
+  
+  @Preconditions
+    None.
+
+  @Param
+    None.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        ADC1_SetPOT_PinInterruptHandler(&ADC1_POT_Pin_CallBack);
+    </code>
+*/
+void ADC1_POT_Pin_CallBack(uint16_t adcVal);
+
+/**
+  @Summary
+    Assigns a function pointer with a ADC1 POT_Pin callback address.
+
+  @Description
+    This routine assigns a function pointer with a ADC1 POT_Pin callback address.
+  
+  @Preconditions
+    None.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        ADC1_SetPOT_PinInterruptHandler(&ADC1_POT_Pin_CallBack);
+    </code>
+*/
+void ADC1_SetPOT_PinInterruptHandler(void* handler);
+
+/**
+  @Summary
+    Polled implementation
+
+  @Description
+    This routine is used to implement the tasks for ADC1 POT_Pin polled implementations.
+  
+  @Preconditions
+    ADC1_Initialize() function should have been 
+    called before calling this function.
+ 
+  @Param
+    None
+
+  @Returns 
+    None
+ 
+  @Example
+    <code>    
+        ADC1_POT_Pin_Tasks();
+    </code>
+*/
+void ADC1_POT_Pin_Tasks(void);
 
 /**
   @Summary
@@ -1182,6 +1268,61 @@ inline static void __attribute__((deprecated("\nThis will be removed in future M
 inline static void __attribute__((deprecated("\nThis will be removed in future MCC releases."))) ADC1_SharedCoreConversionClockPrescalerSet(uint8_t prescaler)
 {
     ADCON2Lbits.SHRADCS = prescaler;
+}
+/**
+  @Summary
+    Returns the ADC1 conversion value for the shared core channel AN0
+
+  @Description
+    This routine is used to get the analog to digital converted value for channel AN0. This
+    routine gets converted values from the shared core channel AN0.
+ 
+  @Preconditions
+    The shared core must be enabled and calibrated before calling this routine 
+    using ADC1_SharedCorePowerEnable() and ADC1_SharedCoreCalibration() 
+    respectively. This routine returns the conversion value only after the 
+    conversion is complete. Completion status conversion can be checked using 
+    ADC1_IsSharedChannelAN0ConversionComplete() routine.
+   
+  @Returns
+    Returns the buffer containing the conversion value.
+
+  @Param
+    Buffer address
+  
+  @Example
+    Refer to ADC1_Initialize(); for an example
+ */
+inline static uint16_t __attribute__((deprecated("\nThis will be removed in future MCC releases."))) ADC1_SharedChannelAN0ConversionResultGet(void) 
+{
+    return ADCBUF0;
+}
+/**
+  @Summary
+    Returns the conversion status of shared channel AN0 selected for conversion
+
+  @Description
+    This routine is used to return the conversion status of the shared channel AN0 
+    selected for conversion.
+  
+  @Preconditions
+    ADC1_Initialize() function should have been 
+    called before calling this function.
+ 
+  @Returns
+    The value of the Channel AN0 Conversion register
+
+  @Param
+    None
+  
+  @Example
+    Refer to ADC1_Initialize(); for an example
+ 
+*/
+
+inline static bool __attribute__((deprecated("\nThis will be removed in future MCC releases."))) ADC1_IsSharedChannelAN0ConversionComplete(void)
+{   
+    return ADSTATLbits.AN0RDY;
 }
 
 #ifdef __cplusplus  // Provide C++ Compatibility

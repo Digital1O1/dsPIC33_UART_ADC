@@ -181,7 +181,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC1" name="AN0"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC1" name="AN1"/>
@@ -277,7 +277,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC1" name="Shared0"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC1" name="Shared1"/>
@@ -341,7 +341,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC1" name="SharedChEnCount"/>
-         <value>0</value>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC1" name="TadCore"/>
@@ -6281,7 +6281,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ADC1" registerAlias="ADTRIG0L"/>
-         <value>0</value>
+         <value>1</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ADC1" registerAlias="ADTRIG1H"/>
@@ -7953,7 +7953,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ADC1" registerAlias="ADTRIG0L" settingAlias="TRGSRC0"/>
-         <value>None</value>
+         <value>Common Software Trigger</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ADC1" registerAlias="ADTRIG0L" settingAlias="TRGSRC1"/>
@@ -12293,7 +12293,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RA0"/>
-         <value>output</value>
+         <value>disabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RA1"/>
@@ -19153,7 +19153,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="ANSELA"/>
-         <value>30</value>
+         <value>31</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="ANSELB"/>
@@ -19561,7 +19561,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="TRISA"/>
-         <value>30</value>
+         <value>31</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="TRISB"/>
@@ -19581,7 +19581,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="ANSELA" settingAlias="ANSELA0"/>
-         <value>digital</value>
+         <value>analog</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="ANSELA" settingAlias="ANSELA1"/>
@@ -22405,7 +22405,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISA" settingAlias="TRISA0"/>
-         <value>output</value>
+         <value>input</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISA" settingAlias="TRISA1"/>
@@ -24553,7 +24553,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="pubSubUARTConfigurations"/>
-         <value>7889.022417992032</value>
+         <value>3278.561223548172</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="usecaseComboSettings"/>
@@ -24561,7 +24561,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="validate"/>
-         <value>0.10669693785022905</value>
+         <value>0.7683596128431157</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.PropertyTokenKey" moduleName="UART" name="uartConfigurationList%0%interruptState"/>
@@ -25799,31 +25799,31 @@
       </entry>
       <entry>
          <file>mcc_generated_files\system.c</file>
-         <hash>f509de1f6dee611c8e980a425c29fa77f3f3f7e74a3d762632b42ec4820fcd38</hash>
+         <hash>9df14de726b0cc7514f33e037ab527d3c3aa6b0b90234737722ee8fd2acc1cb9</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\clock.h</file>
          <hash>ddb7b169dfcde6563e34217c518d9144c34121f97a603dee3daf1c567f057b49</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\drivers\uart.c</file>
-         <hash>a5f2daa3da7731c73517dacc1d761ec01eb2b8a177a6ca6ad04a08fd820444fc</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\mcc.c</file>
          <hash>7f3263d1544b47a58258acb08842a762628dc49fdf7fdd8f758f1a3062695a9e</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\drivers\uart.c</file>
+         <hash>a5f2daa3da7731c73517dacc1d761ec01eb2b8a177a6ca6ad04a08fd820444fc</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\reset.h</file>
          <hash>91fd7cfead4fbbd769ed242d872b85574b3e9c9f9e1934eaf3ea0ec11553fbb4</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\drivers\uart.h</file>
-         <hash>a31269cd5faed8511412ac71f6a71419bf3662ab5e6d671b18f563d51ad3fca1</hash>
+         <file>mcc_generated_files\mcc.h</file>
+         <hash>08bf96b348ed90c80ededef5843d6e6094848bffe6f8f1f39492d6288aa85291</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\mcc.h</file>
-         <hash>57922bd52d372f91c262292c77c8dfff90fc480376f46c9083065b1286414a16</hash>
+         <file>mcc_generated_files\drivers\uart.h</file>
+         <hash>a31269cd5faed8511412ac71f6a71419bf3662ab5e6d671b18f563d51ad3fca1</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\uart2.h</file>
@@ -25838,12 +25838,12 @@
          <hash>36ed80916edc4372d872a0c5359e56a3699a75d7199fdc720bf9f90a402d9e6f</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\adc1.c</file>
-         <hash>bc65e8c5aa06f977868e2e3e6f7a8b1cb529a2fab0aeae0212e4172fe335a58b</hash>
-      </entry>
-      <entry>
          <file>main.c</file>
          <hash>74bca1deb42e5090eba65d1db66066e19ccca2c203d0f1101b84fd8303c8cc62</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\adc1.c</file>
+         <hash>0ecb8613252a9e333e356fa815945fc48e996736a3957a4f1bb85b5c5238dec4</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\uart2.c</file>
@@ -25858,16 +25858,16 @@
          <hash>8af9efe4012a0e9001ffd6441b1605ebb01f2349dd3c0abd1b1d9e3ce31b67ca</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files\pin_manager.c</file>
+         <hash>c2d21fb6e4b0da4911511341f8d1c7f9fc9b005e04a311e6c49f480a27734140</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files\examples\uart_example.c</file>
          <hash>8692cd3efb70c842c76188b3adc8133491f89fac8e3a5ab49ef0e526605126f9</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\docs\uart.dox</file>
          <hash>98e8108c480be91b9d680db751409daa16ab284d6e3664e56dff426441d18783</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\pin_manager.c</file>
-         <hash>261e4882943cb3313b6f2bfc688c883da7ed7094c707027eda7d7b1e38bba779</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\traps.c</file>
@@ -25879,7 +25879,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\adc1.h</file>
-         <hash>c244c3534a7341ad09b60cb69a046e0aedda2bafbe909857ba7e8eb868acee94</hash>
+         <hash>e6ba2fa321319807126956934b7467919f9f30f4fbc2c95798670308345b421d</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\interrupt_manager.c</file>
