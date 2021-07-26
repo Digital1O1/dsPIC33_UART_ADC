@@ -88,7 +88,8 @@ int main(void)
         
         ADC1_Disable(); 
         __delay_ms(500);        
-    }
+    } 
+    
     return 1; 
 }
 /**
