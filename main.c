@@ -51,6 +51,8 @@
 #include <stdio.h>
 #include "mcc_generated_files/system.h"
 #include "mcc_generated_files/examples/uart_example.h"
+#include "mcc_generated_files/adc1.h"
+#include "mcc_generated_files/pin_manager.h"
 
 int count = 0;
 
@@ -65,7 +67,7 @@ void test_Serial_Port()
  */
 int main(void)
 {
-    int conversion,i=0;
+    int conversion = 0;
     
     // initialize the device
     SYSTEM_Initialize();
@@ -74,22 +76,24 @@ int main(void)
     {
         //UART_example_PRINTF();
         //test_Serial_Port();
-        ADC1_Enable();    
-        ADC1_ChannelSelect(_LATA0);
+        LED_Pin_Toggle();
+        ADC1_Enable();
+        ADC1_ChannelSelect(POT_Pin);
         ADC1_SoftwareTriggerEnable();
-        //Provide Delay
-        for(i=0;i <1000;i++)
+        for(int i=0;i <1000;i++)
         {
-            printf("%d\r\n",i);
+            //printf("Delay [ %d ] \r\n",i);
         }
         ADC1_SoftwareTriggerDisable();
-        while(!ADC1_IsConversionComplete(_LATA0));
-        conversion = ADC1_ConversionResultGet(_LATA0);
-        
+        while(!ADC1_IsConversionComplete(POT_Pin));
+        conversion = ADC1_ConversionResultGet(POT_Pin);
         ADC1_Disable(); 
-        __delay_ms(500);        
+        printf("\nADC : %d \n",ADC1_ConversionResultGet(conversion));
+
+        __delay_ms(100);        
+
     } 
-    //Test committ
+    //Test commit
     return 1; 
 }
 /**

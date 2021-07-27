@@ -24553,7 +24553,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="pubSubUARTConfigurations"/>
-         <value>3278.561223548172</value>
+         <value>4480.471100956742</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="usecaseComboSettings"/>
@@ -24561,7 +24561,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="validate"/>
-         <value>0.7683596128431157</value>
+         <value>0.21111472642439622</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.PropertyTokenKey" moduleName="UART" name="uartConfigurationList%0%interruptState"/>
@@ -25799,7 +25799,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\system.c</file>
-         <hash>9df14de726b0cc7514f33e037ab527d3c3aa6b0b90234737722ee8fd2acc1cb9</hash>
+         <hash>ffba7e36118ccddbe5557977fe4a4d180066213fc70b454748c8ef21be51c6f6</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\clock.h</file>
@@ -25819,7 +25819,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>08bf96b348ed90c80ededef5843d6e6094848bffe6f8f1f39492d6288aa85291</hash>
+         <hash>7ef6b58dcc4886c7e473dcca16e8725dd058301ada2fe77da06219696aedf768</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\drivers\uart.h</file>
@@ -25838,12 +25838,12 @@
          <hash>36ed80916edc4372d872a0c5359e56a3699a75d7199fdc720bf9f90a402d9e6f</hash>
       </entry>
       <entry>
-         <file>main.c</file>
-         <hash>74bca1deb42e5090eba65d1db66066e19ccca2c203d0f1101b84fd8303c8cc62</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files\adc1.c</file>
          <hash>0ecb8613252a9e333e356fa815945fc48e996736a3957a4f1bb85b5c5238dec4</hash>
+      </entry>
+      <entry>
+         <file>main.c</file>
+         <hash>74bca1deb42e5090eba65d1db66066e19ccca2c203d0f1101b84fd8303c8cc62</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\uart2.c</file>

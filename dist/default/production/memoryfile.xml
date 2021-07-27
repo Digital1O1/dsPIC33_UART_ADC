@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/production/UART_ADC.production.elf">
+  <executable name="dist/default/production/dsPIC33_UART_ADC.production.elf">
     <memory name="data">
       <units>bytes</units>
       <length>49152</length>
-      <used>304</used>
-      <free>48848</free>
+      <used>306</used>
+      <free>48846</free>
     </memory>
     <memory name="program">
       <units>bytes</units>
       <length>539520</length>
-      <used>12171</used>
-      <free>527349</free>
+      <used>12822</used>
+      <free>526698</free>
     </memory>
   </executable>
 </project>
